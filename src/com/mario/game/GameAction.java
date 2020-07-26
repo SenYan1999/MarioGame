@@ -8,9 +8,7 @@ public enum GameAction {
     SELECT,
     ACTION_COMPLETED,
     PAUSE_RESUME,
-    START,
     FIRE,
-    CROUCH,
     M_LEFT,
     M_RIGHT,
     JUMP;

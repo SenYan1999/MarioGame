@@ -84,14 +84,6 @@ public abstract class GameObject {
         return velX;
     }
 
-    public double getVelY() {
-        return velY;
-    }
-
-    public void setVelX(double velX) {
-        this.velX = velX;
-    }
-
     public void setVelY(double velY) {
         this.velY = velY;
     }
@@ -112,8 +104,12 @@ public abstract class GameObject {
         this.dimension = dimension;
     }
 
-    public double getGravityAcc() {
-        return gravityAcc;
+    public double getVelY() {
+        return velY;
+    }
+
+    public void setVelX(double velX) {
+        this.velX = velX;
     }
 
     public void setGravityAcc(double gravityAcc) {
@@ -140,10 +136,6 @@ public abstract class GameObject {
 
     public Rectangle getRightBounds(){
         return new Rectangle((int)x + 3*dimension.width/4, (int)y + dimension.height/4, dimension.width/4, dimension.height/2);
-    }
-
-    public Rectangle getBounds(){
-        return new Rectangle((int)x, (int)y, dimension.width, dimension.height);
     }
 
 }

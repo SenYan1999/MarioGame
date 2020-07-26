@@ -48,25 +48,4 @@ public class MarioForm {
 
         return style;
     }
-
-    public MarioForm onTouchEnemy(ImageLoader imageLoader) throws IOException {
-        BufferedImage[] leftFrames = imageLoader.getLeftFrames(0);
-        BufferedImage[] rightFrames= imageLoader.getRightFrames(0);
-
-        Animation newAnimation = new Animation(leftFrames, rightFrames);
-
-        return new MarioForm(newAnimation, false, false);
-    }
-
-    public boolean isSuper() {
-        return isSuper;
-    }
-
-    public void setSuper(boolean aSuper) {
-        isSuper = aSuper;
-    }
-
-    public boolean isFire() {
-        return isFire;
-    }
 }

@@ -11,6 +11,16 @@ public class MapItem {
     private Point location;
     private Dimension dimension;
 
+    public MapItem(String name, Point location) throws IOException {
+        this.location = location;
+        this.name = name;
+
+        ImageLoader loader = new ImageLoader();
+        this.background = loader.load_image("maps/" + name);
+
+        this.dimension = new Dimension();
+    }
+
     public Point getLocation() {
         return location;
     }
@@ -25,16 +35,6 @@ public class MapItem {
 
     public void setDimension(Dimension dimension) {
         this.dimension = dimension;
-    }
-
-    public MapItem(String name, Point location) throws IOException {
-        this.location = location;
-        this.name = name;
-
-        ImageLoader loader = new ImageLoader();
-        this.background = loader.load_image("maps/" + name);
-
-        this.dimension = new Dimension();
     }
 
     public String getName(){

@@ -31,8 +31,15 @@ public class GameHandler {
         this.game = game;
     }
 
-    public void selectMapViaKeyboard(int idx) throws IOException {
-        String path = mapHandler.selectMap(idx);
+    public void createMap(String path) throws IOException {
+        MapCreator mapCreator = new MapCreator(game.getImageLoader());
+        map = mapCreator.createMap("maps/" + path, 400);
+
+        game.setStatus(Status.RUNNING);
+    }
+
+    public void ChangeMap(int idx) throws IOException {
+        String path = mapHandler.ChangeMap(idx);
         createMap(path);
     }
 
@@ -42,13 +49,6 @@ public class GameHandler {
 
     public Mario getMario(){
         return map.getMario();
-    }
-
-    public void createMap(String path) throws IOException {
-        MapCreator mapCreator = new MapCreator(game.getImageLoader());
-        map = mapCreator.createMap("maps/" + path, 400);
-
-        game.setStatus(Status.RUNNING);
     }
 
     public void checkCollisions(Game engine) {
@@ -107,7 +107,6 @@ public class GameHandler {
         ArrayList<Brick> bricks = map.getAllBricks();
         ArrayList<GameObject> toBeRemoved = new ArrayList<>();
 
-        boolean marioDies = false;
         boolean toRight = mario.getToRight();
 
         Rectangle marioBounds = toRight ? mario.getRightBounds() : mario.getLeftBounds();
@@ -127,16 +126,6 @@ public class GameHandler {
             mario.setVelX(0);
             mario.setX(engine.getCameraLocation().getX());
         }
-    }
-
-    public int passMission() {
-        if(getMario().getX() >= map.getEndFlag().getX() && !map.getEndFlag().isTouched()){
-            map.getEndFlag().setTouched(true);
-            int height = (int)getMario().getY();
-            return height * 2;
-        }
-        else
-            return -1;
     }
 
     public boolean isEnd(){

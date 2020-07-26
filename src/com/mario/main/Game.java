@@ -6,10 +6,8 @@ import com.mario.game.GameHandler;
 import com.mario.game.InputHandler;
 import com.mario.object.Mario;
 import com.mario.view.ImageLoader;
-import com.mario.view.MapHandler;
 import com.mario.view.SelectMenu;
 import com.mario.view.UIHandler;
-import com.sun.tools.javac.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -179,13 +177,13 @@ public class Game implements Runnable {
                 mapID = gameHandler.getMapHandler().changeSelectedMap(mapID, false);
             }
             else if(gameAction == GameAction.SELECT){
-                gameHandler.selectMapViaKeyboard(mapID);
+                gameHandler.ChangeMap(mapID);
             }
         }
         else if (status == Status.RUNNING) {
             Mario mario = gameHandler.getMario();
             if (gameAction == GameAction.JUMP) {
-                mario.jump(this);
+                mario.jump();
             } else if (gameAction == GameAction.M_RIGHT) {
                 mario.move(true, camera);
             } else if (gameAction == GameAction.M_LEFT) {

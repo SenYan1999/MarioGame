@@ -21,13 +21,5 @@ public class EndFlag extends GameObject{
             super.updateLocation();
         }
     }
-
-    public boolean isTouched() {
-        return touched;
-    }
-
-    public void setTouched(boolean touched) {
-        this.touched = touched;
-    }
 }
 
