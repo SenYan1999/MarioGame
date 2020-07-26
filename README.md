@@ -59,7 +59,10 @@ src.com.mario
 The following is some screenshots of the game.
 
 ## start interface 
-![](screenshots/start_screen.jpg)
+![](screenshots/start-screen.png)
+
+## about interface 
+![](screenshots/about.png)
 
 ## map selection interface
 ![](screenshots/map_selection.jpg)
