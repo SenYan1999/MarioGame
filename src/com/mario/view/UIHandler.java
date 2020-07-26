@@ -42,7 +42,7 @@ public class UIHandler extends JPanel {
         this.coinIcon = loader.getSubImage(sprite, 1, 5, 48, 48);
 
         try{
-            InputStream in = getClass().getResourceAsStream("/com/mario/resources/font/mario-font.ttf");
+            InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("resources/font/mario-font.ttf");
             gameFont = Font.createFont(Font.TRUETYPE_FONT, in);
         }catch (FontFormatException | IOException e){
             gameFont = new Font("Verdana", Font.PLAIN, 12);
