@@ -17,7 +17,7 @@ public class ImageLoader {
     public BufferedImage load_image(String path) throws IOException {
         BufferedImage imageToReturn = null;
         try{
-            imageToReturn = ImageIO.read(getClass().getResourceAsStream("/com/mario/resources/" + path));
+            imageToReturn = ImageIO.read(Thread.currentThread().getContextClassLoader().getResourceAsStream("resources/" + path));
         } catch (IOException e){
             e.printStackTrace();
         }

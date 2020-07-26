@@ -19,9 +19,9 @@ class MapCreator {
     MapCreator(ImageLoader imageLoader) throws IOException {
 
         this.imageLoader = imageLoader;
-        BufferedImage sprite = imageLoader.load_image("/sprite.png");
+        BufferedImage sprite = imageLoader.load_image("sprite.png");
 
-        this.backgroundImage = imageLoader.load_image("/background.png");
+        this.backgroundImage = imageLoader.load_image("background.png");
         this.ordinaryBrick = imageLoader.getSubImage(sprite, 1, 1, 48, 48);
         this.surpriseBrick = imageLoader.getSubImage(sprite, 2, 1, 48, 48);
         this.groundBrick = imageLoader.getSubImage(sprite, 2, 2, 48, 48);

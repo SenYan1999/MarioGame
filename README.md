@@ -1,6 +1,8 @@
 # Mario Game
 Java version of Super Mario Game for SUFE final project.
 
+**NOTE: I build this program in OpenJDK 14.0, please use the specific version to run my program successfully.**
+
 # Introduction
 This is the repo of my implementation of Super Mario Game with Java as my 
 final project. 
@@ -15,6 +17,7 @@ final project.
 ## What I haven't Implemented
 - Add BGM to the game
 - Add more enemy to the game
+- After pass the end point, return to the map selection screen
 - Different forms of Mario(Fire Mario, Big Mario e.t.c)
 - The surprise bricks that randomly gives some game items
 
@@ -42,7 +45,6 @@ src.com.mario
 │   │   Mario.java # mario
 │   │   MarioForm.java # details of mario
 │   │
-└───resources # game resources
 │   
 └───view
 │   │   Animation.java # define the animation of object moving
