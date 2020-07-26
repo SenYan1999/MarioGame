@@ -7,6 +7,8 @@ Java version of Super Mario Game for SUFE final project.
 This is the repo of my implementation of Super Mario Game with Java as my 
 final project. 
 
+**com/mario/main/game.java** is the main function of this program.
+
 ## What I have Implemented
 - The base UI of Mario Game
 - The fundamental operations of Mario Game
